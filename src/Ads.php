@@ -118,9 +118,10 @@ class Ads
     {
         $image = $this->pdo->query("SELECT name FROM ads_image WHERE ads_id = $id")->fetch()->name;
         unlink("assets/images/ads/$image");
-        $query = "DELETE FROM ads WHERE id = :id";
+        $query = "DELETE FROM ads WHERE id = :id AND ads.user_id = :user_id";
         $stmt  = $this->pdo->prepare($query);
         $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':user_id', $_SESSION['user']['id']);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
