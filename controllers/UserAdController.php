@@ -48,6 +48,7 @@ class UserAdController
             && $_POST['address']
             && $_POST['rooms']
             && $_POST['branch']
+            && $_POST['gender']
         ) {
             if ($id) {
                 $ad = $this->ads->updateAds(
@@ -59,7 +60,8 @@ class UserAdController
                     (int) $_POST['branch'],
                     $_POST['address'],
                     (float) $_POST['price'],
-                    (int) $_POST['rooms']
+                    (int) $_POST['rooms'],
+                    $_POST['gender']
                 );
             } else {
                 $ad = $this->ads->createAds(
@@ -70,7 +72,8 @@ class UserAdController
                     (int) $_POST['branch'],
                     $_POST['address'],
                     (float) $_POST['price'],
-                    (int) $_POST['rooms']
+                    (int) $_POST['rooms'],
+                    $_POST['gender']
                 );
             }
 

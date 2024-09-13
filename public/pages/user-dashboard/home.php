@@ -119,12 +119,12 @@ loadPartials('navbar');
 
                                 <li class="flex items-center me-4">
                                     <i class="uil uil-bed-double text-2xl me-2 text-green-600"></i>
-                                    <span>4 Beds</span>
+                                    <span><?= $ad->gender ?></span>
                                 </li>
 
                                 <li class="flex items-center">
                                     <i class="uil uil-bath text-2xl me-2 text-green-600"></i>
-                                    <span>4 Baths</span>
+                                    <span><?= $ad->rooms ?></span>
                                 </li>
                             </ul>
 
