@@ -5,7 +5,7 @@ loadPartials('navbar');
 /**
  * @var $branches
  */
-//dd($ads);
+//dd($_SESSION);
 ?>
     <!-- Start -->
     <section class="relative lg:py-24 py-16">
@@ -72,7 +72,7 @@ loadPartials('navbar');
                                             </div>
 
                                             <div class="lg:mt-6">
-                                                <input type="submit" id="search-buy" name="/search"
+                                                <input type="submit" id="search-buy" name="search"
                                                        class="btn bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white searchbtn submit-btn w-full !h-12 rounded"
                                                        value="Qidirish">
                                             </div>
@@ -114,7 +114,7 @@ loadPartials('navbar');
                             <ul class="py-6 border-y border-slate-100 dark:border-gray-800 flex items-center list-none">
                                 <li class="flex items-center me-4">
                                     <i class="uil uil-compress-arrows text-2xl me-2 text-green-600"></i>
-                                    <span><?php echo $ad->branch_name ?></span>
+                                    <span><?= $ad->branch_name ?></span>
                                 </li>
 
                                 <li class="flex items-center me-4">
@@ -124,7 +124,7 @@ loadPartials('navbar');
 
                                 <li class="flex items-center">
                                     <i class="uil uil-bath text-2xl me-2 text-green-600"></i>
-                                    <span>Rooms <?= $ad->rooms ?></span>
+                                    <span>4 Baths</span>
                                 </li>
                             </ul>
 

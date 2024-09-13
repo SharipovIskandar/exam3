@@ -9,7 +9,7 @@ use App\Branch;
 use App\Session;
 use App\Status;
 
-class AdController
+class UserAdController
 {
     public Ads $ads;
 
@@ -21,7 +21,8 @@ class AdController
     public function index(): void
     {
         $ads = $this->ads->getAds();
-        loadView('dashboard/ads', ['ads' => $ads]);
+
+        loadView('user-dashboard/ads', ['ads' => $ads]);
     }
 
     public function show(int $id): void
@@ -32,8 +33,8 @@ class AdController
 
     public function create(): void
     {
-        loadView('/dashboard/create-ad', [
-            'action'   => "/admin/ads/store",
+        loadView('/user-dashboard/create-ad', [
+            'action'   => "/user/ads/store",
             'ad'       => null,
             'branches' => (new Branch())->getBranches()
         ]);
@@ -84,7 +85,7 @@ class AdController
                 $imageHandler->addImage((int) $ad, $fileName);
             }
 
-            header('Location: /admin/ads/create');
+            header('Location: /user/ads/create');
 
             exit();
         }
@@ -94,8 +95,8 @@ class AdController
 
     public function update(int $id): void
     {
-        loadView('dashboard/update-ad', [
-            'action'   => "/admin/ads/update/$id",
+        loadView('user-dashboard/update-ad', [
+            'action'   => "/user/ads/update/$id",
             'ad'       => $this->ads->getAd($id),
             'branches' => (new Branch())->getBranches(),
         ]);
@@ -104,6 +105,7 @@ class AdController
     public function delete(int $id): void
     {
         $this->ads->deleteAds($id);
+        redirect('user/ads');
     }
 
     public function search(): void

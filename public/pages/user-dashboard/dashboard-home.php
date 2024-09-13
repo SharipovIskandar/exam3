@@ -18,7 +18,7 @@ loadPartials(path: 'header', loadFromPublic: false);
 
 <div class="page-wrapper toggled">
     <?php
-    loadPartials(path: 'sidebar', loadFromPublic: false); ?>
+    loadPartials(path: '../user-partials/sidebar', loadFromPublic: false); ?>
 
     <!-- Start Page Content -->
     <main class="page-content bg-gray-50 dark:bg-slate-800">

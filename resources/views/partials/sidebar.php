@@ -22,7 +22,6 @@
             <li>
                 <a href="/admin/branches"><i class="mdi mdi-home-heart me-2"></i>Filiallar</a>
             </li>
-
             <li class="sidebar-dropdown">
                 <a href="javascript:void(0)"><i class="mdi mdi-account-edit me-2"></i>Foydalanuvchilar</a>
                 <div class="sidebar-submenu">

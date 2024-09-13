@@ -64,13 +64,13 @@ class Ads
 
     public function getAds(): false|array
     {
-        $query = "SELECT *, 
-                        ads.id AS id,
-                        ads.address AS address,
-                        ads_image.name AS image
-                  FROM ads
-                    JOIN branch ON branch.id = ads.branch_id
-                    LEFT JOIN ads_image ON ads.id = ads_image.ads_id";
+        $query = "SELECT 
+                ads.*,
+                branch.name AS branch_name,
+                ads_image.name AS image
+          FROM ads
+          JOIN branch ON branch.id = ads.branch_id
+          LEFT JOIN ads_image ON ads.id = ads_image.ads_id";
         return $this->pdo->query($query)->fetchAll();
     }
 

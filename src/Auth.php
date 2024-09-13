@@ -38,10 +38,10 @@ class Auth
 
             if ($userWithRoles->role_id === Role::ADMIN) {
                 redirect('/admin');
+            }elseif ($userWithRoles->role_id === Role::USER) {
+                redirect('/user');
             }
-
             unset($_SESSION['message']['error']);
-            redirect('/profile2');
         }
 
         $_SESSION['message']['error'] = "Wrong email or password";
